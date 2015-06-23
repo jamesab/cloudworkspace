@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CloudWorkSpace.DAL.DTO.Project>
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-stack-overflow"></i> Projects <span class="" style="padding-left: 5px;"> <a href="~/Projects/Create" class="badge">Create New</a></span>
+        <span class="pull-right">Total: @Model.Count()</span></h3>
+    </div>
+    <div class="panel-body">
+
+
+@foreach (var item in Model)
+{
+    <a href="~/Projects/Edit/@item.ProjectId" class="list-group-item">
+        <span class="pull-right" style="padding-left: 5px;">Est.Amount:<span style="color:green;font-weight:bold;">@Html.DisplayFor(modelItem => item.EstimatedAmount)</span></span>
+        <span class="pull-right" style="padding-left: 5px;">Due Date: <strong>@Html.DisplayFor(modelItem => item.DueDate) | </strong></span>
+        <p class="pull-right">Status: <strong>@Html.DisplayFor(modelItem => item.CurrentStatus) | </strong></p>
+        <i style="color:#337AB7;" class="fa fa-folder"></i> @Html.DisplayFor(modelItem => item.ProjectName)
+    </a>    
+}
+
+        <div class="col-sm-12">
+
+            @*@{Html.RenderAction("PaginationPartial", "Home", new { page = ViewBag.Page });}*@
+            
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <div class="list-group-item">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <input type="search" class="form-control" placeholder="Search Projects" />                    
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right">Total Estimated Amount: <span style="color:green;font-weight:bold;">@Model.Where(p => !p.IsArchived).Sum(p => p.EstimatedAmount).GetValueOrDefault().ToString("C")</span></p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right" style="clear: both;"><i style="color:green;" class="fa fa-fw fa-check"></i> Completed: @Model.Where(i => !i.IsArchived && i.CompletionDate != null).Count()</p>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</div>

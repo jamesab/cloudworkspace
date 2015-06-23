@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Your Office in the cloud.</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Home/Index" class="navbar-brand"><i class="fa fa-cloud"></i> Workspace</a>
+            </div>
+            <!-- Top Menu Items -->
+            
+                @Html.Partial("_LoginPartial")                
+            
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="~/Home/Index"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/Calendar"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/Time"><i class="fa fa-fw fa-bar-chart-o"></i> Preformance</a>
+                    </li>
+                    <li>
+                        <a href="~/Clients/Index"><i class="fa fa-fw fa-group"></i> Clients</a>
+                    </li>
+                    <li>
+                        <a href="~/Projects/Index"><i class="fa fa-fw fa-folder"></i> Projects</a>
+                    </li>
+                    <li>
+                        <a href="~/Notes/Index"><i class="fa fa-fw fa-pencil-square-o"></i> Notes</a>
+                    </li>
+                    <li>
+                        <a href="~/Tasks/Index"><i class="fa fa-fw fa-tasks"></i> Tasks</a>
+                    </li>
+                    <li>
+                        <a href="~/Invoices/Index"><i class="fa fa-fw fa-dollar"></i> Invoices</a>
+                    </li>
+                    @*<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-plus"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Details</a>
+                            </li>
+                            <li>
+                                <a href="#">Tasks &amp; Bugz</a>
+                            </li>
+                        </ul>
+                    </li>*@
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            @ViewBag.Title
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.row -->
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - James Brookshire</p>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/Scripts/main")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

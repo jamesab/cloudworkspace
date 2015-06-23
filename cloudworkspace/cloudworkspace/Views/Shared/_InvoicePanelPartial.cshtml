@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CloudWorkSpace.DAL.DTO.Invoice>
+
+@{
+    ViewBag.Title = "Invoice";
+}
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-fw fa-money"></i> Invoice <a href="~/Invoices/Create" class="badge">Create New</a> <span class="pull-right">Total: @Model.Count()</span></h3>
+    </div>
+    <div class="panel-body">
+        @foreach (var item in Model)
+        {
+            <a href="~/Invoices/Edit/@item.InvoiceId" class="list-group-item">
+                <p class="pull-right"><strong>| Billed:</strong> <span style="color:green;font-weight:bold;">@Html.DisplayFor(modelItem => item.BilledAmount)</span></p>
+                <p class="pull-right" style="padding-right: 5px;"><strong>| Paid:</strong> @Html.DisplayFor(modelItem => item.IsPaid)</p>
+                <p class="pull-right" style="padding-right: 5px;"><strong>Date:</strong> @Html.DisplayFor(modelItem => item.Date)</p>
+                <p><i style="color:green;" class="fa fa-fw fa-dollar"></i>@Html.DisplayFor(modelItem => item.ProjectName)</p>
+            </a>
+        }
+
+        <div class="col-sm-12">
+
+            @*@{Html.RenderAction("PaginationPartial", "Home", new { page = ViewBag.PageNum });}*@
+
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="search" class="form-control" placeholder="Search Projects" />                    
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right"><i style="color:green;" class="fa fa-fw fa-check"></i> Paid: @Model.Where(i => !i.IsArchived && i.Date != null && i.IsPaid).Count()</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

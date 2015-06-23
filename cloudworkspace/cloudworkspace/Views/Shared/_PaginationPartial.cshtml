@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CloudWorkSpace.DAL.DTO.Project>
+@using PagedList.Mvc; 
+@using PagedList;
+
+
+<nav class="text-center">
+    <ul class="pagination">
+
+            @if (ViewBag.Page.Count() < 10)
+            {
+                <li><a href="#">1</a></li>
+            }
+            else
+            {
+                <li>
+                    <a href="~/Home/PaginationPartial" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                
+                for (int i = 1; i < ViewBag.Page; i++)
+                {
+                        <li><a href="#">@i</a></li>
+                }
+                
+                <li>
+                    <a href="~/Home/PaginationPartial?CurrentPage=0" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+
+            }
+
+    </ul>
+</nav>

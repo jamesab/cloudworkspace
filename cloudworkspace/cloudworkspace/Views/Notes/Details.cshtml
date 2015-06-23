@@ -1,0 +1,51 @@
+﻿@model CloudWorkSpace.DAL.DTO.Note
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Note</h4>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Projects.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Projects.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note_Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note_Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NoteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

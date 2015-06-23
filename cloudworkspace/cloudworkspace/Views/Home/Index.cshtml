@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        @{Html.RenderAction("ProjectPartial","Home");}
+
+    </div><!--/Projects Panel-->
+
+    <div class="col-md-6">
+        
+        @{Html.RenderAction("TasksPanelPartial", "Home");}
+
+    </div><!--/Tasks Panel-->
+
+    <div class="col-md-6">
+
+        @{Html.RenderAction("InvoicePanelPartial", "Home");}
+
+    </div><!--/Invoice Panel-->
+
+    <div class="col-md-6">
+
+        @{Html.RenderAction("CommentAndNotesPartial", "Home");}
+
+    </div><!--/Notes Panel-->
+
+</div>

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cloudworkspace", "cloudworkspace\cloudworkspace.csproj", "{9911098C-48B5-4D23-84CC-B33AFC0033E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DB9D6A78-AF8E-4372-9156-A11F4BC14A81}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudWorkSpace.DAL", "DAL\CloudWorkSpace.DAL.csproj", "{83D34F87-546A-4D90-A288-ED43FA427091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9911098C-48B5-4D23-84CC-B33AFC0033E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9911098C-48B5-4D23-84CC-B33AFC0033E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9911098C-48B5-4D23-84CC-B33AFC0033E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9911098C-48B5-4D23-84CC-B33AFC0033E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D34F87-546A-4D90-A288-ED43FA427091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D34F87-546A-4D90-A288-ED43FA427091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D34F87-546A-4D90-A288-ED43FA427091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D34F87-546A-4D90-A288-ED43FA427091}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,44 @@
+
+Projects:
+ProjectName
+Estimated Amount
+Estimated Time
+Due Date
+Start Date
+Completion Date
+IsArchived
+(optional:
+Platform: Web, Desktop, NativeMobile: Android, iOS, Windows
+Lanuage: C#, PHP, Java, 
+)
+
+Invoice:
+ProjectName
+Billed Hours
+Billed Amount
+Invoiced Date
+PaymentType: Cash,Check,Card
+Paid/NOT Paid
+
+Tasks:
+ProjectName
+TaskName
+TotalTimeSpent: hh:mm
+DateCompleted
+TaskStartDate
+Status: Inprogress, Complete, Incomplete, Not Started
+IsArchived
+
+Bugz:
+ProjectName
+Status
+Description
+DateTime Fixed
+IsArchived
+
+Client:
+Name:(FullName/Companies)
+Email
+phone
+Address
+

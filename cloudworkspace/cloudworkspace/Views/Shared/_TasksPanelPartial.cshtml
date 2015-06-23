@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CloudWorkSpace.DAL.DTO.ProjectTask>
+
+@{
+    ViewBag.Title = "Tasks";
+}
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-tasks"></i> Tasks <a href="~/Tasks/Create" class="badge">Create New</a> <span class="pull-right">Total: @Model.Count()</span></h3>
+    </div>
+    <div class="panel-body">
+@foreach (var item in Model)
+{
+    <a href="~/Tasks/Edit/@item.TaskId" class="list-group-item">
+
+        <p class="pull-right" style="font-weight:bold;">@Html.DisplayFor(modelItem => item.Current_Status)</p>
+        <p class="pull-right" style="padding-right: 5px;"><strong>Project:</strong> @Html.DisplayFor(modelItem => item.ProjectName) |</p>
+        @if (!item.IsBug)
+        {
+            <i style="color:red;" class="fa fa-fw fa-thumb-tack"></i>
+        }
+        else
+        {
+            // bug
+            <i style="color:red;" class="fa fa-fw fa-bug"></i>
+        }
+        
+         <span>@Html.DisplayFor(modelItem => item.TaskName)</span>
+    </a>
+}
+
+        <div class="col-sm-12">
+
+            @*@{Html.RenderAction("PaginationPartial", "Home", new { page = ViewBag.PageNum });}*@
+
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="search" class="form-control" placeholder="Search Tasks" />                                        
+                </div>
+                <div class="col-sm-6">
+                    <p class="pull-right"><i style="color:green;" class="fa fa-fw fa-check"></i> Completed: @Model.Where(i => !i.IsArchived && i.CompletionDate != null && i.Current_Status.Equals("Complete")).Count()</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
